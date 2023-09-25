@@ -1,4 +1,4 @@
-from src_auth import (
+from src import (
     app,
     site_config,
 )
