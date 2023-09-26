@@ -1,11 +1,11 @@
 from fastapi_jwt_auth import AuthJWT  # type: ignore
-from src_auth.common import AccessTokenManager
-from src_auth.config import jwt_config
-from src_auth.config.schemas.token_models import (
+from src.common import AccessTokenManager
+from src.config import jwt_config
+from src.config.schemas.token_models import (
     AccessToken,
     TokensData,
 )
-from src_auth.config.schemas.user_models import UserIdData
+from src.config.schemas.user_models import UserIdData
 
 
 class AccessTokenManagerImpl(AccessTokenManager):

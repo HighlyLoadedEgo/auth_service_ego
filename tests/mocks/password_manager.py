@@ -1,4 +1,4 @@
-from src_auth.common import PasswordManager
+from src.common import PasswordManager
 
 
 class PasswordManagerMock(PasswordManager):

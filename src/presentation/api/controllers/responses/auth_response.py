@@ -2,11 +2,11 @@ from pydantic import (
     BaseModel,
     Field,
 )
-from src_auth.config.schemas.token_models import (
+from src.config.schemas.token_models import (
     AccessToken,
     TokensData,
 )
-from src_auth.config.schemas.user_models import UsernameData
+from src.config.schemas.user_models import UsernameData
 
 
 class TokensResponse(TokensData):

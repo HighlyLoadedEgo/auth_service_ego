@@ -9,14 +9,14 @@ from sqlalchemy.exc import (
     DBAPIError,
     IntegrityError,
 )
-from src_auth.application.exceptions import (
+from src.application.exceptions import (
     RepoError,
     UserDataIsNotCorrect,
     UserIsNotExists,
     UsernameIsAlreadyExist,
 )
-from src_auth.common import UserRepo
-from src_auth.config.schemas.user_models import (
+from src.common import UserRepo
+from src.config.schemas.user_models import (
     UserModel,
     UserSaveDataInDB,
 )

@@ -1,9 +1,9 @@
 import pytest
 from pydantic import EmailStr
-from src_auth.application import AuthService
-from src_auth.application.exceptions import UsernameIsAlreadyExist
-from src_auth.config.schemas.token_models import TokensData
-from src_auth.config.schemas.user_models import (
+from src.application import AuthService
+from src.application.exceptions import UsernameIsAlreadyExist
+from src.config.schemas.token_models import TokensData
+from src.config.schemas.user_models import (
     CreateUserData,
     UserModel,
 )

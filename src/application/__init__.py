@@ -1,1 +1,1 @@
-from src_auth.application.services import AuthService
+from src.application.services import AuthService

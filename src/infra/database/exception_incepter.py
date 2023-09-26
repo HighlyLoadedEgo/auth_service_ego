@@ -5,7 +5,7 @@ from typing import (
 )
 
 from sqlalchemy.exc import SQLAlchemyError
-from src_auth.application.exceptions import RepoError
+from src.application.exceptions import RepoError
 
 
 def error_interceptor(func: Callable) -> Callable:

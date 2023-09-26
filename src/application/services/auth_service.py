@@ -1,12 +1,12 @@
 from fastapi_jwt_auth import AuthJWT  # type: ignore
-from src_auth.application import use_cases
-from src_auth.application.auth_uow import AuthUoW
-from src_auth.common import (
+from src.application import use_cases
+from src.application.auth_uow import AuthUoW
+from src.common import (
     AccessTokenManager,
     PasswordManager,
     Service,
 )
-from src_auth.config.schemas import (
+from src.config.schemas import (
     token_models as tm,
     user_models as um,
 )

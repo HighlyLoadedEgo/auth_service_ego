@@ -2,7 +2,7 @@ from fastapi import (
     APIRouter,
     status,
 )
-from src_auth.presentation.api.controllers.responses import HealthCheckResponse
+from src.presentation.api.controllers.responses import HealthCheckResponse
 
 health_check_router = APIRouter(tags=["health_check"])
 

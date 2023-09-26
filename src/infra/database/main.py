@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import (
     async_sessionmaker,
     create_async_engine,
 )
-from src_auth.config import EngineConfig
+from src.config import EngineConfig
 
 
 def create_session_factory(

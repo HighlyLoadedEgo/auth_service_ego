@@ -1,4 +1,4 @@
-from src_auth.application.auth_uow import AuthUoW
+from src.application.auth_uow import AuthUoW
 from tests_auth.mocks.user_repo import UserRepoMock
 
 

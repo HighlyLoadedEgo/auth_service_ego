@@ -1,5 +1,5 @@
 from passlib.context import CryptContext  # type: ignore
-from src_auth.config import PasswordConfig
+from src.config import PasswordConfig
 
 
 def create_pwd_context(config: PasswordConfig) -> CryptContext:

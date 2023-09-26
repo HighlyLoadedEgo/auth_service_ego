@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
-from src_auth.application.auth_uow import AuthUoW
-from src_auth.infra import UserRepositoryImpl
+from src.application.auth_uow import AuthUoW
+from src.infra import UserRepositoryImpl
 
 from .base import SQLAlchemyBaseUoW
 

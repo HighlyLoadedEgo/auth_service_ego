@@ -1,6 +1,6 @@
 from abc import ABC
 
-from src_auth.common import (
+from src.common import (
     UnitOfWork,
     UserRepo,
 )

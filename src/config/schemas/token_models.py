@@ -1,5 +1,5 @@
 from pydantic import Field
-from src_auth.config.schemas.base import BaseDataModel
+from src.config.schemas.base import BaseDataModel
 
 
 class AccessToken(BaseDataModel):

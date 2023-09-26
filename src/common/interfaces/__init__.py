@@ -1,1 +1,1 @@
-from src_auth.common.interfaces.uow import UnitOfWork
+from src.common.interfaces.uow import UnitOfWork

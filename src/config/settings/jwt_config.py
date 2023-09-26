@@ -1,7 +1,7 @@
 from datetime import timedelta
 
 from pydantic import Field
-from src_auth.config.settings.base import BaseConfigSettings
+from src.config.settings.base import BaseConfigSettings
 
 
 class JWTSettings(BaseConfigSettings):

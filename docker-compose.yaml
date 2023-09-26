@@ -27,7 +27,7 @@ services:
     restart: on-failure
     volumes:
       - ./alembic.ini:/app/alembic.ini:ro
-      - ./src_auth/infra/database/migrations:/src_auth/infra/database/migrations:ro
+      - ./src/infra/database/migrations:/src/infra/database/migrations:ro
     command: ["python", "-m", "alembic", "upgrade", "head"]
     depends_on:
       auth-database:
@@ -38,7 +38,7 @@ services:
   auth-fastapi-app:
     container_name: auth.app
     build: .
-    command: python run_auth.py
+    command: ["python", "-O", "-m", "src"]
     restart: always
     ports:
       - ${SITE_PORT}:${SITE_PORT}

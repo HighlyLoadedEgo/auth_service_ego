@@ -5,8 +5,8 @@ from fastapi import (
     status,
 )
 from fastapi_jwt_auth import AuthJWT  # type: ignore
-from src_auth.application import AuthService
-from src_auth.application.exceptions import (
+from src.application import AuthService
+from src.application.exceptions import (
     UserDataIsNotCorrect,
     UserIsNotExists,
     UsernameIsAlreadyExist,

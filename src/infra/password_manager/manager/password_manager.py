@@ -1,6 +1,6 @@
 import bcrypt
-from src_auth.common import PasswordManager
-from src_auth.infra.password_manager.manager.base import PasswordManagerBase
+from src.common import PasswordManager
+from src.infra.password_manager.manager.base import PasswordManagerBase
 
 
 class PasswordManagerImpl(PasswordManagerBase, PasswordManager):

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from src_auth.common import BaseAppException
+from src.common import BaseAppException
 
 
 @dataclass

@@ -5,13 +5,13 @@ from fastapi import (
 )
 from fastapi.responses import ORJSONResponse
 from fastapi_jwt_auth.exceptions import AuthJWTException  # type: ignore
-from src_auth.application.exceptions import (
+from src.application.exceptions import (
     UserDataIsNotCorrect,
     UserIsNotExists,
     UsernameIsAlreadyExist,
 )
-from src_auth.common import BaseAppException
-from src_auth.common.exceptions import BaseJWTException
+from src.common import BaseAppException
+from src.common.exceptions import BaseJWTException
 
 from .responses.exception_responses import ErrorResult
 

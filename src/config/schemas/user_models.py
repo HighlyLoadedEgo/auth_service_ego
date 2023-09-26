@@ -3,8 +3,8 @@ from pydantic import (
     Field,
     validator,
 )
-from src_auth.common import Empty
-from src_auth.config.schemas.base import BaseDataModel
+from src.common import Empty
+from src.config.schemas.base import BaseDataModel
 
 
 class UserIdData(BaseDataModel):

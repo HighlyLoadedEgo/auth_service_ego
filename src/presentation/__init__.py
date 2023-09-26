@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from src_auth.presentation.api import register_routers
-from src_auth.presentation.api.di import di_builder
+from src.presentation.api import register_routers
+from src.presentation.api.di import di_builder
 
 
 def init_app() -> FastAPI:

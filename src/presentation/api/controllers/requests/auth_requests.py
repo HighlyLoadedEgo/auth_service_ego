@@ -1,4 +1,4 @@
-from src_auth.config.schemas.user_models import (
+from src.config.schemas.user_models import (
     CreateUserData,
     LoginSchema,
     UpdateUserData,

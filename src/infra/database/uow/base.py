@@ -1,6 +1,6 @@
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
-from src_auth.application.exceptions import (
+from src.application.exceptions import (
     CommitError,
     RollbackError,
 )
