@@ -1,0 +1,57 @@
+version: '3.9'
+
+name: auth-service
+services:
+  auth-database:
+    container_name: auth.database
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_DB}
+      PGDATA: ${DATABASE_PGDATA}
+    ports:
+      - 0:${DATABASE_PORT}
+    volumes:
+      - ${DATABASE_PGDATA}
+    command: ["postgres", "-c", "port=${DATABASE_PORT}"]
+    env_file:
+      - .env
+    networks:
+      - as-net
+
+  auth-postgres-migration:
+    container_name: auth.migrations
+    build: .
+    restart: on-failure
+    volumes:
+      - ./alembic.ini:/alembic.ini:ro
+      - ./src/infra/database/migrations:/src/infra/database/migrations:ro
+    command: ["python", "-m", "alembic", "upgrade", "head"]
+    env_file:
+      - .env
+    depends_on:
+      auth-database:
+        condition: service_started
+    networks:
+      - as-net
+
+  auth-fastapi-app:
+    container_name: auth.app
+    build: .
+    command: ["python", "-O", "-m", "src"]
+    restart: always
+    ports:
+      - ${SITE_PORT}:${SITE_PORT}
+    env_file:
+      - .env
+    depends_on:
+      auth-database:
+        condition: service_started
+    networks:
+      - as-net
+
+networks:
+  as-net:
+    driver: bridge
