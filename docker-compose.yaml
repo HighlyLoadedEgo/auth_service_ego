@@ -1,6 +1,6 @@
 version: '3.9'
 
-name: my-microservices
+name: auth-service
 services:
   auth-database:
     container_name: auth.database
@@ -12,28 +12,30 @@ services:
       POSTGRES_DB: ${DATABASE_DB}
       PGDATA: ${DATABASE_PGDATA}
     ports:
-      - ${DATABASE_PORT}:${DATABASE_PORT}
+      - 0:${DATABASE_PORT}
     volumes:
       - ${DATABASE_PGDATA}
     command: ["postgres", "-c", "port=${DATABASE_PORT}"]
     env_file:
       - .env
     networks:
-      my-ms:
+      - as-net
 
   auth-postgres-migration:
     container_name: auth.migrations
     build: .
     restart: on-failure
     volumes:
-      - ./alembic.ini:/app/alembic.ini:ro
+      - ./alembic.ini:/alembic.ini:ro
       - ./src/infra/database/migrations:/src/infra/database/migrations:ro
     command: ["python", "-m", "alembic", "upgrade", "head"]
+    env_file:
+      - .env
     depends_on:
       auth-database:
         condition: service_started
     networks:
-      my-ms:
+      - as-net
 
   auth-fastapi-app:
     container_name: auth.app
@@ -48,8 +50,8 @@ services:
       auth-database:
         condition: service_started
     networks:
-      my-ms:
+      - as-net
 
 networks:
-  my-ms:
+  as-net:
     driver: bridge
