@@ -2,7 +2,7 @@ import pytest
 from fastapi_jwt_auth.exceptions import JWTDecodeError  # type: ignore
 from src.application import AuthService
 from src.config.schemas.user_models import UserIdData
-from tests_auth import mocks as m
+from tests import mocks as m
 
 
 @pytest.mark.asyncio

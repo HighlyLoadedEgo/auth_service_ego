@@ -7,7 +7,7 @@ from src.config.schemas.user_models import (
     CreateUserData,
     UserModel,
 )
-from tests_auth import mocks as m
+from tests import mocks as m
 
 
 @pytest.mark.asyncio

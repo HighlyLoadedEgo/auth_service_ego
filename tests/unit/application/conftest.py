@@ -1,5 +1,5 @@
 import pytest
-from tests_auth import mocks as m
+from tests import mocks as m
 
 
 @pytest.fixture
